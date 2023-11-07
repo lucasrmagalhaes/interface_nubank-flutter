@@ -1,2 +1,5 @@
-# interface_nubank-flutter
-Interface do Nubank com Flutter
+### Interface do Nubank com Flutter
+
+```
+flutter run
+```
