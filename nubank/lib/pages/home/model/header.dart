@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:nubank/controllers/controller_home_page.dart';
 import 'package:nubank/utils/colors.dart';
 
 class Header extends StatefulWidget {
@@ -19,13 +21,10 @@ class _HeaderState extends State<Header> {
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              _profile(),
-              _options()
-            ],
+            children: [_profile(), _options()],
           ),
           const SizedBox(height: 32),
-           _welcome()
+          _welcome()
         ],
       ),
     );
@@ -47,9 +46,17 @@ class _HeaderState extends State<Header> {
   _options() {
     return Row(
       children: [
-        IconButton(
-            onPressed: () {},
-            icon: Icon(MdiIcons.eyeOutline, color: Colors.white)),
+        GetBuilder<ControllerHomePage>(
+            init: ControllerHomePage(),
+            builder: (controllerHomePage) {
+              return IconButton(
+                  onPressed: () => controllerHomePage.showValue(),
+                  icon: Icon(
+                      controllerHomePage.eyesValue
+                          ? MdiIcons.eyeOutline
+                          : MdiIcons.eyeOff,
+                      color: Colors.white));
+            }),
         IconButton(
             onPressed: () {},
             icon: Icon(MdiIcons.helpCircleOutline, color: Colors.white)),
@@ -63,8 +70,11 @@ class _HeaderState extends State<Header> {
 
   _welcome() {
     return Container(
-      margin: const EdgeInsets.only(left: 20, bottom: 20),
-      child: const Text('Lucas Magalhães', style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold))
-    );
+        margin: const EdgeInsets.only(left: 20, bottom: 20),
+        child: const Text('Lucas Magalhães',
+            style: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+                fontWeight: FontWeight.bold)));
   }
 }
