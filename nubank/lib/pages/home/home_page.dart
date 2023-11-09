@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:nubank/pages/home/model/header.dart';
-import 'package:nubank/utils/colors.dart';
+// import 'package:nubank/utils/colors.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
