@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:nubank/pages/account/account.dart';
-import 'package:nubank/pages/actions/menu_itens.dart';
-import 'package:nubank/pages/creditCards/credit_cards.dart';
-import 'package:nubank/pages/home/model/header.dart';
+import 'package:nubank/pages/home/account/account_page.dart';
+import 'package:nubank/pages/home/actions/menu_itens_page.dart';
+import 'package:nubank/pages/home/creditCards/credit_cards_page.dart';
+import 'package:nubank/pages/home/model/header_page.dart';
+import 'package:nubank/pages/home/notification/notification_page.dart';
 // import 'package:nubank/utils/colors.dart';
 
 class HomePage extends StatefulWidget {
@@ -28,7 +29,9 @@ class _HomePageState extends State<HomePage> {
               Account(),
               MenuItens(),
               Divider(thickness: 1.6),
-              CreditCards()
+              CreditCards(),
+              Divider(thickness: 1.6),
+              Notifications()
             ],
           )
         ),
