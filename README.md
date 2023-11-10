@@ -1,5 +1,7 @@
 ### Interface do Nubank com Flutter
 
+![Interface Nubank com Flutter](https://github.com/lucasrmagalhaes/interface_nubank-flutter/blob/main/nubank/lib/utils/img/interface.jpg?raw=true)
+
 ```
 stfu
 stl
